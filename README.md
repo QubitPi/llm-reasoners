@@ -2,15 +2,15 @@
 
 ---
 
-> "Reasoning with language model is planning with a world model" -- [stateof.ai](https://qubitpi.github.io/stateofai/)
-> 2023
+> "**Reasoning with language model is planning with a world model**" -
+> [stateof.ai](https://qubitpi.github.io/stateofai/) 2023
 > 
 > Reasoning has been traditionally thought of as searching a space of possible outcomes and picking the best one. By
 > containing so much information about the world, LLMs offer the opportunity of generating this space (often called a
 > world model) in which planning algorithms can explore. [Reasoning via Planning (RAP)](https://github.com/QubitPi/RAP)
 > uses Monte Carlo Tree Search to find a high-reward reasoning path efficiently.
 > 
-> <img src="./images/rap.png" width="50%" align="center"/>
+> <img src="./images/rap.png" width="80%" align="center"/>
 > 
 > - The world model can generate an action as well as predict the next state reached by taking that action. This
 >   produces a reasoning trace which makes the LM more coherent then Chain of Thought methods which predict next actions
