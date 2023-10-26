@@ -2,6 +2,23 @@
 
 ---
 
+> "Reasoning with language model is planning with a world model" -- [stateof.ai](https://qubitpi.github.io/stateofai/)
+> 2023
+> 
+> Reasoning has been traditionally thought of as searching a space of possible outcomes and picking the best one. By
+> containing so much information about the world, LLMs offer the opportunity of generating this space (often called a
+> world model) in which planning algorithms can explore. [Reasoning via Planning (RAP)](https://github.com/QubitPi/RAP)
+> uses Monte Carlo Tree Search to find a high-reward reasoning path efficiently.
+> 
+> <img src="./images/rap.png" width="50%" align="center"/>
+> 
+> - The world model can generate an action as well as predict the next state reached by taking that action. This
+>   produces a reasoning trace which makes the LM more coherent then Chain of Thought methods which predict next actions
+>   but not next world states.
+> - The rewards are also obtained from the LM and used to maintain a state-action value function for planning with MCTS.
+> - While being significantly more expensive, RAP outperforms Chain-of-Thought reasoning approaches on plan generation,
+>   math reasoning and logical reasoning. RAP on LLaMA-33B even outperforms CoT on GPT-4 in a setting of Blocksworld.
+
 **LLM Reasoners** is a library to enable LLMs to conduct complex reasoning, with advanced reasoning algorithms. It approaches multi-step reasoning as planning and searches for the optimal reasoning chain, which achieves the best balance of exploration vs exploitation with the idea of "World Model" and "Reward".
 
 Given any reasoning problem, simply define the reward function and an optional world model (explained below), and let LLM reasoners take care of the rest, including Reasoning Algorithms, Visualization, LLM calling, and more!
