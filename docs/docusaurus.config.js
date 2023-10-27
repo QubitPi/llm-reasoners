@@ -36,14 +36,14 @@ const config = {
 
   presets: [
     [
-      '@docusaurus/preset-classic',
-      {
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
         docs: {
-          path: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          rehypePlugins: [katex]
         },
         blog: {
           showReadingTime: true,
@@ -52,27 +52,8 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      },
+      }),
     ],
-//    [
-//      'classic',
-//      /** @type {import('@docusaurus/preset-classic').Options} */
-//      ({
-//        docs: {
-//          sidebarPath: require.resolve('./sidebars.js'),
-//          editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
-//          remarkPlugins: [math],
-//          rehypePlugins: [katex]
-//        },
-//        blog: {
-//          showReadingTime: true,
-//          editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
-//        },
-//        theme: {
-//          customCss: require.resolve('./src/css/custom.css'),
-//        },
-//      }),
-//    ],
   ],
   stylesheets: [
     {
