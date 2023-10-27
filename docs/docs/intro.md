@@ -29,7 +29,7 @@ With the definition of state and action, the reasoning process can thus be descr
 the LLM (as a **reasoning agent**) generates an action space by sampling from its generative distribution
 $a_t ∼ p(a|s_t,c)$, where $c$ is a proper prompt (e.g., in-context demonstrations). Once an action is chosen, the world
 model then predicts the next state $s_{t+1}$ of the reasoning. Specifically, we repurpose the same LLM to obtain a state
-transition distribution $p(s_{t+1}|s_t, a_t, c′)$, where c′ is another prompt to guide the LLM to generate a state.
+transition distribution $p(s_{t+1}|s_t, a_t, c')$, where c' is another prompt to guide the LLM to generate a state.
 
 Continuing the process results in a reasoning trace, which consists of a sequence of interleaved states and actions
 $(s_0, a_0, s_1, . . . , a_{T-1}, s_T)$. Note that the full reasoning trace is simulated by the LLM itself (as a
