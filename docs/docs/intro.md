@@ -1,47 +1,19 @@
 ---
 sidebar_position: 1
+title: Introducing World Model
 ---
 
-# Tutorial Intro
+The world model originated from
+[Ha and Schmidhuber, 2018b; Matsuo et al., 2022](https://qubitpi.github.io/worldmodels.github.io/). Basically, human
+develop a mental model of the world based on what we are able to perceive with our limited senses. The decisions and
+actions we make are based on this internal model. The image of the world around us, which we carry in our head, is just
+a _model_. Nobody in his head imagines all the world, government or country. We have only selected **concepts, and
+relationships** between them, and uses those to represent the real system.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+:::tip What is a World Model?
 
-## Getting Started
+With respect to [llm-reasoners](https://github.com/QubitPi/llm-reasoners), a **world model** is a _repurposed LLM_,
+which builds a reasoning graph. In this graph, a node is called a **state** and a link is called an **action**. _The LLM
+generates the link_
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+:::
