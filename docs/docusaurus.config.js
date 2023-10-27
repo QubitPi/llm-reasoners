@@ -40,34 +40,39 @@ const config = {
       {
         docs: {
           path: 'docs',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
-      },
-    ],
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/'
-        },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
+//    [
+//      'classic',
+//      /** @type {import('@docusaurus/preset-classic').Options} */
+//      ({
+//        docs: {
+//          sidebarPath: require.resolve('./sidebars.js'),
+//          editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
+//          remarkPlugins: [math],
+//          rehypePlugins: [katex]
+//        },
+//        blog: {
+//          showReadingTime: true,
+//          editUrl: 'https://github.com/QubitPi/llm-reasoners/tree/master/docs/',
+//        },
+//        theme: {
+//          customCss: require.resolve('./src/css/custom.css'),
+//        },
+//      }),
+//    ],
   ],
   stylesheets: [
     {
