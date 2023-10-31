@@ -1,47 +1,38 @@
 ---
 sidebar_position: 1
+title: Introducing World Model
 ---
 
-# Tutorial Intro
+The world model originated from
+[Ha and Schmidhuber, 2018b; Matsuo et al., 2022](https://qubitpi.github.io/worldmodels.github.io/). Basically, human
+develop a mental model of the world based on what we are able to perceive with our limited senses. The decisions and
+actions we make are based on this internal model. The image of the world around us, which we carry in our head, is just
+a _model_. Nobody in his head imagines all the world, government or country. We have only selected **concepts, and
+relationships** between them, and uses those to represent the real system.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+:::tip What is a World Model?
 
-## Getting Started
+With respect to [llm-reasoners](https://github.com/QubitPi/llm-reasoners), a **world model** is a _repurposed LLM_,
+which builds a reasoning graph. In this graph, a node is called a **state** and a link is called an **action**. _The LLM
+generates the link_
 
-Get started by **creating a new site**.
+:::
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### Language Model as World Model
 
-### What you'll need
+In general, a world model predicts the next state of the reasoning after applying an action to the current state.
+[RAP](https://github.com/QubitPi/RAP) enables us to instantiate the general concepts of state and action in different
+ways depending on the specific reasoning problems at hand.
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+With the definition of state and action, the reasoning process can thus be described as a
+Markov decision process (MDP): given the current state $s_{t,t=0,1,...,T}$ , e.g., the initial state $s_0$,
+the LLM (as a **reasoning agent**) generates an action space by sampling from its generative distribution
+$a_t ∼ p(a|s_t,c)$, where $c$ is a proper prompt (e.g., in-context demonstrations). Once an action is chosen, the world
+model then predicts the next state $s_{t+1}$ of the reasoning. Specifically, we repurpose the same LLM to obtain a state
+transition distribution $p(s_{t+1}|s_t, a_t, c')$, where c' is another prompt to guide the LLM to generate a state.
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Continuing the process results in a reasoning trace, which consists of a sequence of interleaved states and actions
+$(s_0, a_0, s_1, . . . , a_{T-1}, s_T)$. Note that the full reasoning trace is simulated by the LLM itself (as a
+reasoning agent with an internal world model) without interacting with the external real environment. This resembles
+humans contemplating a possible plan in their minds. The capability of simulating future states, by introducing the
+world model, allows us to incorporate principled planning algorithms to efficiently explore the vast reasoning space
