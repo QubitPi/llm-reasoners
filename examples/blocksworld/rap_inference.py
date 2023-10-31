@@ -199,4 +199,4 @@ if __name__ == '__main__':
                lm_plan_file=lm_plan_file, **kwargs)
 
 
-    fire.Fire(exllama_main) # user will need to switch the model in the code
+    fire.Fire(llamacpp_main) # user will need to switch the model in the code

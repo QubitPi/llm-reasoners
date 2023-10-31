@@ -10,32 +10,36 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Cutting-Edge Reasoning Algorithms',
+    Svg: require('@site/static/img/algorithm.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        We offer the most up-to-date search algorithms for reasoning with LLMs, such as <a href="https://arxiv.org/abs/2305.14992">RAP-MCTS</a>, <a href="https://arxiv.org/abs/2305.10601">Tree-of-Thoughts</a>, <a href="https://arxiv.org/abs/2305.00633">Guided Decoding</a>,
+        and more. These advanced algorithms enable tree-structure reasoning and outperform traditional
+        chain-of-thoughts approaches.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Intuitive Visualization and Interpretation',
+    Svg: require('@site/static/img/visualization.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Our library provides visualization tools to help users make sense of the reasoning process. Even in the case of
+        the most complex reasoning algorithms like Monte-Carlo Tree Search, users can easily diagnose and understand
+        what happened with one line of python code.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Compatibility with any LLM libraries',
+    Svg: require('@site/static/img/compatibility.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Our framework is compatible with any LLM frameworks, e.g. Huggingface transformers, OpenAI API, etc.
+        Specifically, we integrated LLaMA with the option of using <a href="https://github.com/facebookresearch/llama">fairscale</a> backend
+        for improved multi-GPU performance or <a href="https://github.com/QubitPi/llama.cpp">LLaMA.cpp</a> backend with
+        lower hardware requirements.
       </>
     ),
   },
