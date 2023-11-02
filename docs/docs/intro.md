@@ -41,7 +41,7 @@ world model, allows us to incorporate principled planning algorithms to efficien
 Quickstart
 ----------
 
-In examples/blocksworld/rap_inference.py, make sure llama.cpp mode is used:
+In `examples/blocksworld/rap_inference.py`, make sure llama.cpp mode is used:
 
 ```python
 fire.Fire(llamacpp_main)
@@ -51,5 +51,12 @@ This will run everything in local mode
 
 ### Install llama.cpp
 
+https://github.com/QubitPi/llama.cpp#:~:text=README.md-,Quickstart,-obtain%20the%20original
+
+### Run
+
+```bash
+python3 examples/blocksworld/rap_inference.py -m relative/path/to/llama.cpp/models/llama-2-7b/ggml-model-q4_0.gguf
+```
 
 [MDP]: https://en.wikipedia.org/wiki/Markov_decision_process
